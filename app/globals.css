@@ -3,31 +3,150 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    --color-background-primary: #fff;
+    --color-background-secondary: #cbcbcb;
+    --color-text-primary: #000;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+    :root {
+        --color-background-primary: #000;
+        --color-background-secondary: #18181a;
+        --color-text-primary: #fff;
+    }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    color: var(--color-text-primary);
+    background: var(--color-background-primary);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.MarkdownEditor h1 {
+    font-size: xxx-large;
 }
+
+.MarkdownEditor h2 {
+    font-size: xx-large;
+}
+
+.MarkdownEditor h3 {
+    font-size: x-large;
+}
+
+.MarkdownEditor h4 {
+    font-size: large;
+}
+
+.MarkdownEditor ul > li {
+    list-style: disc;
+}
+
+.MarkdownEditor li > ul > li {
+    list-style: circle;
+}
+
+.MarkdownEditor li > ul {
+    position: relative;
+    left: 10px;
+}
+
+.MarkdownEditor ol > li {
+    list-style: decimal;
+}
+
+.MarkdownEditor table, td, tr, th {
+    border: var(--color-text-primary) 1px solid;
+}
+
+.MarkdownEditor.hljs {
+    background: #404040 !important;
+    color: #f0f0f0 !important;
+}
+
+.MarkdownEditor .hljs,
+.MarkdownEditor .hljs-subst {
+    color: #f0f0f0 !important;
+}
+
+.MarkdownEditor .hljs-comment {
+    color: #b5b5b5 !important;
+    font-style: italic !important;
+}
+
+.MarkdownEditor .hljs-keyword,
+.MarkdownEditor .hljs-attribute,
+.MarkdownEditor .hljs-selector-tag,
+.MarkdownEditor .hljs-meta-keyword,
+.MarkdownEditor .hljs-doctag,
+.MarkdownEditor .hljs-name {
+    color: orange !important;
+    font-weight: bold !important;
+}
+
+.MarkdownEditor .hljs-string {
+    color: #97bf0d !important;
+}
+
+.MarkdownEditor .hljs-type,
+.MarkdownEditor .hljs-number,
+.MarkdownEditor .hljs-selector-id,
+.MarkdownEditor .hljs-selector-class,
+.MarkdownEditor .hljs-quote,
+.MarkdownEditor .hljs-template-tag,
+.MarkdownEditor .hljs-deletion {
+    color: blue !important;
+}
+
+.MarkdownEditor .hljs-title,
+.MarkdownEditor .hljs-section {
+    color: #df471e !important;
+}
+
+.MarkdownEditor .hljs-title > .hljs-built_in {
+    color: #81bce9 !important;
+    font-weight: normal !important;
+}
+
+.MarkdownEditor .hljs-regexp,
+.MarkdownEditor .hljs-symbol,
+.MarkdownEditor .hljs-variable,
+.MarkdownEditor .hljs-template-variable,
+.MarkdownEditor .hljs-link,
+.MarkdownEditor .hljs-selector-attr,
+.MarkdownEditor .hljs-selector-pseudo {
+    color: #e2c696 !important;
+}
+
+.MarkdownEditor .hljs-built_in,
+.MarkdownEditor .hljs-literal {
+    color: #97bf0d !important;
+    font-weight: bold !important;
+}
+
+.MarkdownEditor .hljs-bullet,
+.MarkdownEditor .hljs-code,
+.MarkdownEditor .hljs-addition {
+    color: #397300 !important;
+}
+
+.MarkdownEditor .hljs-class {
+    color: #ce9d4d !important;
+    font-weight: bold !important;
+}
+
+.MarkdownEditor .hljs-meta {
+    color: #1f7199 !important;
+}
+
+.MarkdownEditor .hljs-meta-string {
+    color: #4d99bf !important;
+}
+
+.MarkdownEditor .hljs-emphasis {
+    font-style: italic !important;
+}
+
+.MarkdownEditor .hljs-strong {
+    font-weight: bold !important;
+}
+
